@@ -42,3 +42,10 @@ class MorseCode
         {'9', "----."},
     };
 
+    private readonly Dictionary<string, char> _decodeDict;
+
+    public MorseCode()
+    {
+        _decodeDict = _encodeDict.ToDictionary(x => x.Value, x => x.Key);
+    }
+
